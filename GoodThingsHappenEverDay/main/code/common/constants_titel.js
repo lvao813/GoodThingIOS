@@ -1,5 +1,6 @@
 export const Jurnal1 = '记录';
 export const Calender1 = '日历';
+
 export const Setting1 = '设置';
 export const Today = '今天';
 export const History1 = '历史';
