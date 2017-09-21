@@ -20,6 +20,8 @@ import About from './About';
 import Control from './Control';
 import Wel from './welcome/Wel';
 
+import { About1} from './common/constants_titel';
+
 
 import { StackNavigator,TabNavigator } from 'react-navigation';
 
@@ -46,6 +48,7 @@ const App = StackNavigator({
       header:null
     }
    },
+    
    
   History:{ screen: History,
    navigationOptions:{
@@ -101,15 +104,12 @@ const App = StackNavigator({
         }},
   About:{ screen:About,
     navigationOptions:{
-            headerTitle:'About',
-            headerBackTitle:null,
-            headerRight:(<Image style={{height:40,width:40,alignItems:'center',justifyContent:'center'}} 
-            source={require('./image/hot.png')}
-            ><Text style={{textAlign:'center',fontWeight:'bold',fontSize:20}}
-            >1</Text></Image>),
-            headerTitleStyle:{
-                alignSelf:'center'
-            },
+            header:null
+
+            
+            
+          
+
         }
   },
   
