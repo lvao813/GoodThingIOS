@@ -6,15 +6,62 @@ import {
 } from 'react-native';
 import Loading from './common/Loading' 
 import { StackNavigator } from 'react-navigation';
+import { NavigationActions } from 'react-navigation';
+import { getItem, saveItem} from './common/AsyncStorage';
  export default class Control extends Component {
+   constructor(props) {
+        super(props);
+        this.state = {
+            name:''
+        };
+        
+      }
   componentWillMount() {
-    const { navigate } = this.props.navigation;
-    +          navigate('Wel');
+    var promise = saveItem("texinput1", '0', () => { }).then((result) => {
+      var promise = saveItem("texinput2", '0', () => { }).then((result) => {
+        var promise = saveItem("Calender", '0', () => { }).then((result) => {
+          var promise = saveItem("leftday", '86400000', () => { }).then((result) => {
+            var promise = getItem("name1").then((result) => {
+                
+                    this.goTo(result);
+                    
+                  
+                }).catch((error) => {
+                  console.error(new Error("失败"));
+                  this.goTo();
+                })
+              }).catch((error) => {
+                console.error(new Error("失败"));
+                this.goTo();
+              })    
+          }).catch((error) => {
+            console.error(new Error("失败"));
+            this.goTo();
+          })
+        }).catch((error) => {
+          console.error(new Error("失败"));
+          this.goTo();
+        })
+      }).catch((error) => {
+        console.error(new Error("失败"));
+        this.goTo();
+      })
   }
-  goTo(){
-      if(true){
+
+  goTo(name){
+    
+      if(name==null){
         const { navigate } = this.props.navigation;
-    +          navigate('Roots');
+             navigate('Wel');
+      }else{
+        const resetAction = NavigationActions.reset({
+          index: 0,
+          actions: [
+          NavigationActions.navigate({routeName: 'Roots'})
+          ]
+      })
+      
+      this.props.navigation.dispatch(resetAction);  
       }
   }
   render() {
