@@ -1,0 +1,1 @@
+export const AboutPath = './common/constants_titel';
