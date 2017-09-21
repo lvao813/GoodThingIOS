@@ -264,7 +264,7 @@ import { Header,Badeg1,Badeg2,Badeg3,Badeg4 } from './common/constants';
                 <TouchableOpacity style={styles.LifeView}
                     // onPress={()=>{this._showImagePicker()}}
                   >
-                      <Image source={{uri:this.state.img}} style={{height:50,width:50,borderRadius:50, resizeMode:'cover',marginTop:10}}></Image>
+                      <Image source={{uri:this.state.img}} style={{height:50,width:50,borderRadius:25, resizeMode:'cover',marginTop:10}}></Image>
                   </TouchableOpacity>
                 <View style={styles.RightView}>
                       <View style={styles.RightInpView}>
@@ -276,8 +276,8 @@ import { Header,Badeg1,Badeg2,Badeg3,Badeg4 } from './common/constants';
                         value={this.state.name}
                         style={styles.RightInp}
                         onChangeText={(Text) => {this.setState({name:Text})}}
-                      ></TextInput><Image source={{uri:this.state.badgeImge}} style={{height:18,width:15,marginTop:18}}/></View>
-                      <View style={{flex:3,justifyContent:'center',alignItems:'center',}}>
+                      ></TextInput><Image source={{uri:this.state.badgeImge}} style={{height:18,width:15,}}/></View>
+                      <View style={{flex:3,alignItems:'center',}}>
                         <View style={styles.TopView4}>
                           <ProgressBarAndroid  color="#F2743C" styleAttr='Horizontal' progress={this.state.progress}  
                             indeterminate={false} style={{width:150,height:3}} />  
@@ -395,15 +395,19 @@ const styles = StyleSheet.create({
     fontSize:16,
     color:'#F6FCFF',
     flex:2,
-    
+    // lineHeight:10,
+    // height:10,
     width:140,
+    
     
 
   },
   RightInpView:{
     width:160,
     marginLeft:15,
+    // height:20,
     flexDirection:'row',
+    
 
   },
   RighitTV:{
@@ -416,7 +420,7 @@ const styles = StyleSheet.create({
   },
   TopView4:{
     marginLeft:15,
-    
+    marginTop:10,
     
   },
   TopView4T:{
