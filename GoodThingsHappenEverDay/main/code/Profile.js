@@ -289,7 +289,8 @@ import { Header,Badeg1,Badeg2,Badeg3,Badeg4 } from './common/constants';
 
                   </View>
               </View>       
-              <View style={{flex:3,flexDirection:'row',margin:10,marginTop:5,backgroundColor:'#fff',borderRadius:8,elevation: 4,  }}>
+              <View style={{flex:3,flexDirection:'row',margin:10,marginTop:5,backgroundColor:'#fff',borderRadius:8,elevation: 4,
+              shadowOffset: {width: 0, height: 0},shadowColor: '#666',shadowOpacity: 1,shadowRadius: 2  }}>
                   <View style={{flex:5,}}>
                     <View style={styles.TopleftView}>
                         <Text style={{fontSize:20,color:'#FDDE80'}}>{this.state.level}</Text>
@@ -311,7 +312,7 @@ import { Header,Badeg1,Badeg2,Badeg3,Badeg4 } from './common/constants';
           </Image> 
         </View>
         <View style={styles.TopView3}>
-          <View style={{flex:4,backgroundColor:'#fff',elevation: 4,  }}>
+          <View style={{flex:4,backgroundColor:'#fff',elevation: 4,shadowOffset: {width: 0, height: 0},shadowColor: '#666',shadowOpacity: 1,shadowRadius: 2  }}>
               <View style={{flex:1,flexDirection:'row',}}>
                 <View style={{flex:9,justifyContent:'center',marginLeft:10}}><Text style={{fontSize:15,color:'#8B8B8B'}}>{Streak}</Text></View>
                 <View style={{flex:2,justifyContent:'center',alignItems:'center'}}><Text style={{fontSize:20,color:'#64C0E5'}}>{this.state.current}</Text></View>

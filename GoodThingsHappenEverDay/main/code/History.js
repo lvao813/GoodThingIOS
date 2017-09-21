@@ -329,6 +329,10 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius:10,
     elevation: 2,
+    shadowOffset: {width: 0, height: 0},
+    shadowColor: '#666',
+    shadowOpacity: 1,
+    shadowRadius: 2,
     flexDirection:'row'
   },
   bottomView:{

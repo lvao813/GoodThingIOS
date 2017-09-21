@@ -1527,6 +1527,10 @@ const styles = StyleSheet.create({
 
 
     elevation: 4,
+    shadowOffset: {width: 0, height: 0},
+    shadowColor: '#666',
+    shadowOpacity: 1,
+    shadowRadius: 2
 
 
 
