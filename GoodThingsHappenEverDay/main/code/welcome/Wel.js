@@ -9,6 +9,10 @@ import {
   TextInput,
 } from 'react-native';
 import { getItem, saveItem} from '../common/AsyncStorage'
+import { toastLong} from '../common/ToastUtils'
+import { NavigationActions } from 'react-navigation';
+import Swiper from 'react-native-swiper';
+import {NameT,WELT11,WELT12,WELT13,WELT21,WELT22,WELT23,WELT24,WELT31,WELT32,WELT33,WELINP} from '../common/constants_titel';
 var Dimensions = require('Dimensions');
 var width = Dimensions.get('window').width;
 var height = Dimensions.get('window').height;
@@ -22,87 +26,188 @@ import { StackNavigator } from 'react-navigation';
         
       }
       seve(){
+        let keyarry1 = [];
+        let d = new Date().getTime();
+        let uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            let r = (d + Math.random()*16)%16 | 0;
+            d = Math.floor(d/16);
+            return (c=='x' ? r : (r&0x3|0x8)).toString(16);
+        });
+        let exp = 0;
+        let streak = 0;
+        let longstreak = 0;
+        let daythings = 0; 
           if(this.state.name==''){
-              alert('请输入您的姓名')
+              toastLong(NameT)
           }else{
                 var promise = saveItem("name1", this.state.name, () => { }).then((result) => {
-                    const { navigate } = this.props.navigation;
-                    navigate('Roots');
+                    var promise = saveItem("uuid", uuid, () => { }).then((result) => {
+                        // alert(uuid)
+                        var promise = saveItem("level", '1', () => { }).then((result) => {
+                        var promise = saveItem("keyarry1", JSON.stringify(keyarry1), () => { }).then((result) => {
+                            // alert(uuid)
+                             var promise = saveItem("exp", exp.toString(), () => { }).then((result) => {
+                                // 经验值
+                                var promise = saveItem("streak1", streak.toString(), () => { }).then((result) => {
+                                    // 连续记录
+                                    var promise = saveItem("longstreak1", longstreak.toString(), () => { }).then((result) => {
+                                        // 最长记录
+                                        var promise = saveItem("daythings", daythings.toString(), () => { }).then((result) => {
+                                            // 几件事
+                                            let newDate = new Date();
+                                            let newDay = newDate.toJSON();
+                                            let thisday = newDay.slice(0,10)
+                                            var promise = saveItem("Calender", '0', () => { }).then((result) => {
+                                                let nTime= new Date(new Date().setHours(0,0,0,0))
+                                                let newtime = Date.parse(nTime);
+                                                // let inputime = ''+newtime+''//界定是否隔天的时间戳
+                                                var promise = saveItem("tomorrow", newtime.toString(), () => { }).then((result) => {
+                                                    var promise = saveItem("Calenderday", thisday, () => { }).then((result) => {
+                                                        var promise = saveItem("texinput1", '0', () => { }).then((result) => {
+                                                            var promise = saveItem("texinput2", '0', () => { }).then((result) => {
+                                                                var promise = saveItem("friends", '0', () => { }).then((result) => {
+                                                                var promise = saveItem("texinput3", '3', () => { }).then((result) => {
+                                                                    const resetAction = NavigationActions.reset({
+                                                                        index: 0,
+                                                                        actions: [
+                                                                        NavigationActions.navigate({routeName: 'Roots'})
+                                                                        ]
+                                                                    })
+                                                                    
+                                                                    this.props.navigation.dispatch(resetAction); 
+                                                                }).catch((error) => {
+                                                                    console.error(new Error("失败"));
+                                                                })
+                                                                }).catch((error) => {
+                                                                console.error(new Error("失败"));
+                                                                this.goTo();
+                                                                })
+                                                            }).catch((error) => {
+                                                                console.error(new Error("失败"));
+                                                            })
+                                                        }).catch((error) => {
+                                                                console.error(new Error("失败"));
+                                                        })
+                                                    }).catch((error) => {
+                                                        console.error(new Error("失败"));
+                                                    })
+                                                }).catch((error) => {
+                                                    console.error(new Error("失败"));
+                                                })
+
+                                            }).catch((error) => {
+                                              console.error(new Error("失败"));
+                                            })
+                                            
+                                        }).catch((error) => {
+                                        console.error(new Error("失败"));
+                                        })
+                                    }).catch((error) => {
+                                    console.error(new Error("失败"));
+                                    })
+                                }).catch((error) => {
+                                console.error(new Error("失败"));
+                                })
+                            }).catch((error) => {
+                            console.error(new Error("失败"));
+                            })
+                        }).catch((error) => {
+                            console.error(new Error("失败"));
+                            })
+                        }).catch((error) => {
+                        console.error(new Error("失败"));
+                        })
+                    }).catch((error) => {
+                    console.error(new Error("失败"));
+                    })
+                   
                 }).catch((error) => {
                 console.error(new Error("失败"));
                 })
           }
       }
+    _renderSwiper(){
+        return (
+            <Swiper
+                // style={styles.swiperStyle}
+                height={200}
+                horizontal={true}
+                autoplay={true}
+                autoplayTimeout={6}
+                loop={false}
+                paginationStyle={{bottom:50}}
+                dotStyle={{backgroundColor:'#a5e4ff', width: 6, height: 6}}
+                activeDotStyle={{backgroundColor:'#03b4ff', width: 6, height: 6}}>
+                        <View style={styles.container}>
+                            <View style={{height:40}}></View>
+                            <Image style={{height:200,width:200,marginBottom:10}}  source={require('../image/BigSmile.png')}></Image>
+                            <Text style={styles.welcome} >
+                            {WELT11}
+                            </Text>
+                            <Text style={styles.instructions}>
+                            {WELT12}
+                            </Text>
+                            <Text style={styles.instructions}>
+                            {WELT13}
+                            </Text>
+                           
+                        
+                    </View>
+                    <View style={styles.container}>
+                            <View style={{height:40}}></View>
+                            <Image style={{height:200,width:200,marginBottom:10}} source={require('../image/brush.png')}></Image>
+                            <Text style={styles.welcome} >
+                            {WELT21}
+                            </Text>
+                            <Text style={styles.instructions} >
+                            {WELT22}
+                            </Text>
+                            <Text style={styles.instructions}>
+                            {WELT23}
+                            </Text>
+                            <Text style={styles.instructions}>
+                            {WELT24}
+                            </Text>
+                           
+                        
+                    </View>
+                    <View style={styles.container}>
+                            <View style={{height:40}}></View>
+                            <Image style={{height:200,width:200,marginBottom:10}} source={require('../image/medal.png')}></Image>
+                            <Text style={styles.welcome} >
+                            {WELT31}
+                            </Text>
+                            <Text style={styles.instructions} >
+                            {WELT32}
+                            </Text>
+                            <Text style={styles.instructions}>
+                            {WELT33}
+                            </Text>
+                            
+                            <TextInput
+                                underlineColorAndroid="transparent"
+                                autoCapitalize='words'
+                                placeholder={WELINP}
+                                maxLength={15}
+                                onBlur={() =>{this.seve()}}
+                                onChangeText={(Text) => {this.setState({name:Text})}}
+                                style={styles.TextInputSt}
+                            ></TextInput>
+                        
+                    </View>
+            </Swiper>
+        )
+    }
   render() {
     return (
-        <ScrollView style={{flex: 1}}
-        contentContainerStyle={styles.contentContainer}
-        bounces={false}
-        pagingEnabled={true}
-        showsHorizontalScrollIndicator={false}
-        horizontal={true}>
-        <View style={styles.container}>
-           
-                <Image  source={require('../image/BigSmile.png')}></Image>
-                <Text style={styles.welcome} >
-                Good Things Happen Ever Day!
-                </Text>
-                <Text style={styles.instructions}>
-                    In just 5 minuttes a day,increase your
-                </Text>
-                <Text style={styles.instructions}>
-                    happeniness and rewire your brain to
-                </Text>
-                <Text style={styles.instructions}>
-                    focus on the positive.
-                </Text>
-            
-        </View>
-        <View style={styles.container}>
-            
-                <Image style={{height:100,width:100,marginBottom:30}} source={require('../image/brush.png')}></Image>
-                <Text style={styles.welcome} >
-                Good Things Happen Ever Day!
-                </Text>
-                <Text style={styles.instructions}>
-                    In just 5 minuttes a day,increase your
-                </Text>
-                <Text style={styles.instructions}>
-                    happeniness and rewire your brain to
-                </Text>
-                <Text style={styles.instructions}>
-                    focus on the positive.
-                </Text>
-           
-        </View>
-        <View style={styles.container}>
-           
-                <Image style={{height:100,width:100,marginBottom:30}} source={require('../image/medal.png')}></Image>
-                <Text style={styles.welcome} >
-                Good Things Happen Ever Day!
-                </Text>
-                <Text style={styles.instructions}>
-                    In just 5 minuttes a day,increase your
-                </Text>
-                <Text style={styles.instructions}>
-                    happeniness and rewire your brain to
-                </Text>
-                <Text style={styles.instructions}>
-                    focus on the positive.
-                </Text>
-                <TextInput
-                    underlineColorAndroid="transparent"
-                    placeholder="Enter your name here to get started!"
-                    onBlur={() =>{this.seve()}}
-                    onChangeText={(Text) => {this.setState({name:Text})}}
-                    style={styles.TextInputSt}
-                ></TextInput>
-           
-        </View>
-      </ScrollView>
+        <View style={{flex: 1}}>
+        {this._renderSwiper()}
+        
+      </View>
     );
   }
 }
+
 
 const styles = StyleSheet.create({
     contentContainer: {
@@ -114,11 +219,11 @@ const styles = StyleSheet.create({
       height:height,
     },
   container: {
-    height:height,
-    width:width,
-    justifyContent: 'center',
+    flex:1,
+    // justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+    
   },
     TouchableStyle: {
         flex: 1,
@@ -127,27 +232,34 @@ const styles = StyleSheet.create({
        
     },
   welcome: {
-    fontSize: 20,
+    fontSize: 18,
     textAlign: 'center',
     margin: 10,
-    marginTop:20,
-    color:'#13227a',
-    fontWeight:'bold'
+    marginTop:30,
+    marginBottom:20,
+    color:'#444444',
+    // fontWeight:'bold'
 
   },
   instructions: {
     textAlign: 'center',
-    color: '#13227a',
+    color: '#b3b3b3',
     marginBottom: 5,
   },
   TextInputSt:{
     // marginLeft:40,
     // marginRight:40,
-    width:width-150,
-    borderColor:'#13227a',
+    height:35,
+    width:width-120,
+    borderColor:'#31bdfe',
     borderWidth:2,
     borderRadius:10,
-    color:'#13227a'
+    color:'#444444'
 
   },
+  swiperItem:{
+    flex:1,
+    justifyContent:'center',
+    backgroundColor:'transparent',
+},
 });
