@@ -15,7 +15,7 @@ var height = Dimensions.get('window').height;
 import { getItem, saveItem} from './common/AsyncStorage';
 import { Profile1,Level,Exp1,Exp2,TLevel,Recommended,Streak,LongStreak,Days,Things,MSG,NameT,LibraryButton,TakePhoto,Cacel,ImageTitle} from './common/constants_titel';
 import { toastLong} from './common/ToastUtils';
-// import ImagePicker from 'react-native-image-picker';
+import ImagePicker from 'react-native-image-picker';
 import { Header,Badeg1,Badeg2,Badeg3,Badeg4 } from './common/constants';
 
  class Profile extends Component {
@@ -37,28 +37,28 @@ import { Header,Badeg1,Badeg2,Badeg3,Badeg4 } from './common/constants';
             friends:0,
 
         };
-    //       this.options = {
-    //   title: ImageTitle,
-    //   cancelButtonTitle: Cacel,
-    //   takePhotoButtonTitle: TakePhoto,
-    //   chooseFromLibraryButtonTitle: LibraryButton,
+          this.options = {
+      title: ImageTitle,
+      cancelButtonTitle: Cacel,
+      takePhotoButtonTitle: TakePhoto,
+      chooseFromLibraryButtonTitle: LibraryButton,
 
-    //   // durationLimit: 10,
-    //   // maxWidth: 100,
-    //   // maxHeight: 100,
-    //   // aspectX: 2,
-    //   // aspectY: 1,
-    //   quality: 0.75,
-    //   angle: 0,
-    //   allowsEditing: true,
-    //   noData: false,
-    //   storageOptions: {
-    //     skipBackup: true,
-    //     path: 'images',
-    //     cameraRoll: true,
+      // durationLimit: 10,
+      // maxWidth: 100,
+      // maxHeight: 100,
+      // aspectX: 2,
+      // aspectY: 1,
+      quality: 0.75,
+      angle: 0,
+      allowsEditing: true,
+      noData: false,
+      storageOptions: {
+        skipBackup: true,
+        path: 'images',
+        cameraRoll: true,
 
-    //   }
-    // };
+      }
+    };
         
       }
     componentWillMount() {
@@ -216,33 +216,34 @@ import { Header,Badeg1,Badeg2,Badeg3,Badeg4 } from './common/constants';
           this.setState({badgeImge:Badeg4})
         }
       }
-  //   _showImagePicker() {//头像选择，相机，相册
-  //   ImagePicker.showImagePicker(this.options, (response) => {
-  //     if (response.didCancel) {
-  //       console.log('User cancelled image picker')
-  //     } else if (response.error) {
-  //       console.log('ImagePicker Error: ', response.error)
-  //     } else {
-  //       this.setState({img:response.uri})
-  //       var promise = saveItem("img", response.uri, () => { }).then((result) => {
-  //                  toastLong(MSG);
+    _showImagePicker() {//头像选择，相机，相册
+    ImagePicker.showImagePicker(this.options, (response) => {
+      if (response.didCancel) {
+        console.log('User cancelled image picker')
+      } else if (response.error) {
+        console.log('ImagePicker Error: ', response.error)
+      } else {
+        // alert(response.uri)
+        this.setState({img:response.uri})
+        var promise = saveItem("img", response.uri, () => { }).then((result) => {
+                   toastLong(MSG);
                    
-  //               }).catch((error) => {
-  //               console.log('1');
-  //               })
-  //       //改
+                }).catch((error) => {
+                console.log('1');
+                })
+        //改
 
-  //       // console.log(baseUri)
+        // console.log(baseUri)
         
         
 
-  //     }
+      }
 
 
-  //   })
+    })
 
 
-  // }
+  }
   render() {
     return (
       <View style={{backgroundColor:'#cdccc8',flex:1,marginTop:20}}>
@@ -262,7 +263,7 @@ import { Header,Badeg1,Badeg2,Badeg3,Badeg4 } from './common/constants';
               </View>
               <View style={{flex:3,flexDirection:'row',marginBottom:10}}>
                 <TouchableOpacity style={styles.LifeView}
-                    // onPress={()=>{this._showImagePicker()}}
+                    onPress={()=>{this._showImagePicker()}}
                   >
                       <Image source={{uri:this.state.img}} style={{height:50,width:50,borderRadius:25, resizeMode:'cover',marginTop:10}}></Image>
                   </TouchableOpacity>
