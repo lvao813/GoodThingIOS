@@ -415,7 +415,7 @@ const Brief = Item.Brief;
               visible={this.state.modalVisible2}
               animationType={'fade'}
               transparent = {true}
-              onRequestClose={()=> {}}
+              onRequestClose={()=> {}} 
           >
               <View style={{flex:1,justifyContent:'center',alignItems:'center',backgroundColor:'rgba(0,0,0,0.4)'}} >
                   <View style={{backgroundColor:'#fff',height:250,width:width-130,borderRadius:10}}>
