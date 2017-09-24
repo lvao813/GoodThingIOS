@@ -78,7 +78,7 @@ import { getItem, saveItem} from './common/AsyncStorage';
 
   render() {
     return (
-      <ScrollView style={styles.container}>
+      <View style={styles.container}>
             <View style={{flexDirection:'row',backgroundColor:'#4FA4FF',}}>
                 <View style={styles.topView}>
                       <Text style={styles.topText}>{Calender1}</Text>
@@ -100,7 +100,7 @@ import { getItem, saveItem} from './common/AsyncStorage';
       />
        
        
-      </ScrollView>
+      </View>
       
     );
   }
@@ -159,6 +159,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F5FCFF',
+    marginTop:20,
   },
   topView:{
     height:50,

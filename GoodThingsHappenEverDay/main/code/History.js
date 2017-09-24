@@ -109,7 +109,7 @@ var ScreenWidth = Dimensions.get('window').width;
                 </View>
                 <View style={{flex:15,}}>
                   <View style={{flexDirection:'row',height:15,}}>
-                    <Image source={require('./image/history-icon.png')} style={{height:10,width:10}}></Image>
+                    <Image source={require('./image/history-icon.png')} style={{height:10,width:10,marginRight:7}}></Image>
                     <Text style={{fontSize:10,lineHeight:10,color:'#b3b3b3'}}>{date}</Text>
                   </View> 
                   
@@ -132,7 +132,7 @@ var ScreenWidth = Dimensions.get('window').width;
                 </View>
                 <View style={{flex:15,}}>
                   <View style={{flexDirection:'row',height:15,}}>
-                    <Image source={require('./image/history-icon.png')} style={{height:10,width:10}}></Image>
+                    <Image source={require('./image/history-icon.png')} style={{height:10,width:10,marginRight:7}}></Image>
                     <Text style={{fontSize:10,lineHeight:10,color:'#b3b3b3'}}>{date}</Text>
                   </View> 
                   
@@ -155,7 +155,7 @@ var ScreenWidth = Dimensions.get('window').width;
                 </View>
                 <View style={{flex:15,}}>
                   <View style={{flexDirection:'row',height:15,}}>
-                    <Image source={require('./image/history-icon.png')} style={{height:10,width:10}}></Image>
+                    <Image source={require('./image/history-icon.png')} style={{height:10,width:10,marginRight:7}}></Image>
                     <Text style={{fontSize:10,lineHeight:10,color:'#b3b3b3'}}>{date}</Text>
                   </View> 
                   
@@ -178,7 +178,7 @@ var ScreenWidth = Dimensions.get('window').width;
                 </View>
                 <View style={{flex:15,}}>
                   <View style={{flexDirection:'row',height:15,}}>
-                    <Image source={require('./image/history-icon.png')} style={{height:10,width:10}}></Image>
+                    <Image source={require('./image/history-icon.png')} style={{height:10,width:10,marginRight:7}}></Image>
                     <Text style={{fontSize:10,lineHeight:10,color:'#b3b3b3'}}>{date}</Text>
                   </View> 
                   
@@ -328,10 +328,12 @@ const styles = StyleSheet.create({
     // height: 100,
     padding: 15,
     borderRadius:10,
+    borderColor:'#666',
+    borderWidth:1,
     elevation: 2,
-    shadowOffset: {width: 0, height: 0},
-    shadowColor: '#666',
-    shadowOpacity: 3,
+    shadowOffset: {width: 2, height: 2},
+    shadowColor: '#333',
+    // shadowOpacity: 0.2,
     shadowRadius: 2,
     flexDirection:'row'
   },

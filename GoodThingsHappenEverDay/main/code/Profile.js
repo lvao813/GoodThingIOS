@@ -7,7 +7,7 @@ import {
   Image,
   TouchableOpacity,
   TextInput,
-  ProgressBarAndroid,
+  ProgressViewIOS,
 } from 'react-native';
 var Dimensions = require('Dimensions');
 var width = Dimensions.get('window').width;
@@ -258,14 +258,14 @@ import { Header,Badeg1,Badeg2,Badeg3,Badeg4 } from './common/constants';
                     </View>
                   <View style={{height:50,width:40,alignItems:'center',justifyContent:'center',flexDirection:'row',marginRight:8}} >
                     <Image source={require('./image/level.png')} style={{height:12,width:15,marginRight:2}}/>
-                      <Text style={{textAlign:'center',fontSize:12,color:'#F6FCFF'}}>{Level}{this.state.level}</Text>
+                      <Text style={{textAlign:'center',fontSize:12,color:'#F6FCFF',backgroundColor:'transparent'}}>{Level}{this.state.level}</Text>
                   </View>
               </View>
-              <View style={{flex:3,flexDirection:'row',marginBottom:10}}>
+              <View style={{flex:4,flexDirection:'row',marginBottom:10}}>
                 <TouchableOpacity style={styles.LifeView}
                     onPress={()=>{this._showImagePicker()}}
                   >
-                      <Image source={{uri:this.state.img}} style={{height:50,width:50,borderRadius:25, resizeMode:'cover',marginTop:10}}></Image>
+                      <Image source={{uri:this.state.img}} style={{height:80,width:80,borderRadius:40, resizeMode:'cover',marginTop:10}}></Image>
                   </TouchableOpacity>
                 <View style={styles.RightView}>
                       <View style={styles.RightInpView}>
@@ -280,7 +280,7 @@ import { Header,Badeg1,Badeg2,Badeg3,Badeg4 } from './common/constants';
                       ></TextInput><Image source={{uri:this.state.badgeImge}} style={{height:18,width:15,}}/></View>
                       <View style={{flex:3,alignItems:'center',}}>
                         <View style={styles.TopView4}>
-                          <ProgressBarAndroid  color="#F2743C" styleAttr='Horizontal' progress={this.state.progress}  
+                          <ProgressViewIOS  color="#F2743C" styleAttr='Horizontal' progress={this.state.progress}  
                             indeterminate={false} style={{width:150,height:3}} />  
                           <View style={styles.TopView4B}>
                           <Text style={styles.View4BText}>{Exp1}{this.state.nextexp}{Exp2}</Text></View>
@@ -314,7 +314,7 @@ import { Header,Badeg1,Badeg2,Badeg3,Badeg4 } from './common/constants';
         </View>
         <View style={styles.TopView3}>
           <View style={{flex:4,backgroundColor:'#fff',elevation: 4,shadowOffset: {width: 0, height: 0},shadowColor: '#666',shadowOpacity: 1,shadowRadius: 2  }}>
-              <View style={{flex:1,flexDirection:'row',}}>
+              <View style={{flex:1,flexDirection:'row',borderStyle:'dotted',borderBottomWidth:1,borderColor:'#666'}}>
                 <View style={{flex:9,justifyContent:'center',marginLeft:10}}><Text style={{fontSize:15,color:'#8B8B8B'}}>{Streak}</Text></View>
                 <View style={{flex:2,justifyContent:'center',alignItems:'center'}}><Text style={{fontSize:20,color:'#64C0E5'}}>{this.state.current}</Text></View>
               </View>
@@ -406,6 +406,7 @@ const styles = StyleSheet.create({
   RightInpView:{
     width:160,
     marginLeft:15,
+    marginTop:20,
     // height:20,
     flexDirection:'row',
     
