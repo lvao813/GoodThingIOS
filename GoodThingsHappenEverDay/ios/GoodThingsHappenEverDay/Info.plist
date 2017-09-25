@@ -65,6 +65,8 @@
 	<string></string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+    <string>Good Things Happeny Everday want to use your camera</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Good Things Happeny Everday want to use your photo</string>
 	<key>UILaunchStoryboardName</key>
