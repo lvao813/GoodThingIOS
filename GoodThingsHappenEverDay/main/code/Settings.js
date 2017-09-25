@@ -15,7 +15,7 @@ import {
 import {  List } from 'antd-mobile';
 import { NavBar, Icon } from 'antd-mobile';
 import Activity from './common/ModalActivity';
-// import * as WeChat from 'react-native-wechat';
+import * as WeChat from 'react-native-wechat';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import { toastLong} from './common/ToastUtils';
 import { NavigationActions } from 'react-navigation';
@@ -50,7 +50,7 @@ const Brief = Item.Brief;
         
        
         };
-        // WeChat.registerApp('wx6000a418f168ac83');
+        WeChat.registerApp('wx6000a418f168ac83');
         
       }
       componentWillMount() {
@@ -205,33 +205,33 @@ const Brief = Item.Brief;
     })
 
   }     
-  // _weixin(){
+  _weixin(){
     
-  //   WeChat.isWXAppInstalled()
-  //   .then((isInstalled) => {
-  //     if (isInstalled) {
+    WeChat.isWXAppInstalled()
+    .then((isInstalled) => {
+      if (isInstalled) {
         
-  //      var promise =  WeChat.shareToSession({
-  //         title:WachatTitle,
-  //         description: Description,
-  //         // thumbImage: 'http://img.mp.sohu.com/upload/20170624/13254199b97140f380ba30d670abd0c8_th.png',
-  //         type: 'news',
-  //         webpageUrl: 'https://www.vloveapp.com/'
-  //       }).then((result) =>{
-  //         this.setState({modalVisible2:true})
-  //       }).catch((error) => {
-  //         // toastLong('请点击发送')
+       var promise =  WeChat.shareToSession({
+          title:WachatTitle,
+          description: Description,
+          // thumbImage: 'http://img.mp.sohu.com/upload/20170624/13254199b97140f380ba30d670abd0c8_th.png',
+          type: 'news',
+          webpageUrl: 'https://www.vloveapp.com/'
+        }).then((result) =>{
+          this.setState({modalVisible2:true})
+        }).catch((error) => {
+          // toastLong('请点击发送')
           
-  //       });
-  //     } else {
-  //       toastLong(WachatEr)
-  //       // this.setState({modalVisible2:true})
+        });
+      } else {
+        toastLong(WachatEr)
+        // this.setState({modalVisible2:true})
         
         
         
-  //     }
-  //   });
-  // }
+      }
+    });
+  }
   _swith(value){
     // alert(value)
     let swvalue = value
@@ -399,7 +399,7 @@ const Brief = Item.Brief;
           <Item  arrow="horizontal" multipleLine='true' onClick={() => {this._Link('http://weibo.com/p/1006066366532562/home?profile_ftype=1&is_all=1#_0')}}>{Microblogging}</Item>
           <Item  arrow="horizontal" multipleLine='true' onClick={() => {this._Link('http://www.vloveapp.com/')}}>{Wechat1}</Item>
           <Item  arrow="horizontal" multipleLine='true' onClick={() => {
-            // this._weixin()
+            this._weixin()
           } }>{Friends}</Item>
       </List>
       

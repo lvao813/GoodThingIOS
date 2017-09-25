@@ -20,12 +20,12 @@ import {
   Jurnal1, Today, ThingsToday, onPassIn, EXPTitle, Level, WachatEr, WachatNull, Modal2Happ, Modal2Msg, ModalDay, ModalGoal,
   ModalST, ModalStaek, ModalOK, Modal3Happ, Modal4Happ
 } from './common/constants_titel';
-// import * as WeChat from 'react-native-wechat';
+import * as WeChat from 'react-native-wechat';
 import { NavigationActions } from 'react-navigation';
 import { toDipsHeight } from './common/PixelRatioUtils'
 
 
-// const weChatAppId = 'wx6000a418f168ac83';
+const weChatAppId = 'wx6000a418f168ac83';
 import { getItem, saveItem } from './common/AsyncStorage'
 class Journl extends Component {
   constructor(props) {
@@ -72,7 +72,7 @@ class Journl extends Component {
 
 
     };
-    // WeChat.registerApp('wx6000a418f168ac83');
+    WeChat.registerApp('wx6000a418f168ac83');
   }
   componentWillMount() {
     // var promise = getItem("NaverAsk").then((result) => {
@@ -950,37 +950,37 @@ class Journl extends Component {
     })
 
   }
-  // _weixin1(text) {
-  //   let text1 = text+'                                                             '+'https://www.vloveapp.com/'
-  //   if (text == '') {
-  //     toastLong(WachatNull)
-  //   } else {
-  //     WeChat.isWXAppInstalled()
-  //       .then((isInstalled) => {
-  //         if (isInstalled) {
-  //           var promise = WeChat.shareToTimeline({  title:'记录美好的一天',
-  //           description: text1,
+  _weixin1(text) {
+    let text1 = text+'                                                                    '+'https://www.vloveapp.com/'
+    if (text == '') {
+      toastLong(WachatNull)
+    } else {
+      WeChat.isWXAppInstalled()
+        .then((isInstalled) => {
+          if (isInstalled) {
+            var promise = WeChat.shareToTimeline({  title:'记录美好的一天',
+            description: text1,
            
-  //           type: 'text',
+            type: 'text',
            
-  //         }).then((result) => {
+          }).then((result) => {
 
 
 
-  //             this._EXPUP()
-  //           }).catch((error) => {
+              this._EXPUP()
+            }).catch((error) => {
 
-  //             // toastLong(error.message);
-  //           });
-  //         } else {
-  //           toastLong(WachatEr);
-  //           // this._EXPUP()
+              // toastLong(error.message);
+            });
+          } else {
+            toastLong(WachatEr);
+            // this._EXPUP()
 
-  //         }
-  //       });
-  //   }
+          }
+        });
+    }
 
-  // }
+  }
   _today() {
     const resetAction = NavigationActions.reset({
       index: 0,
@@ -1312,7 +1312,7 @@ class Journl extends Component {
             <View style={{ width: width - 80, height: 30, alignItems: 'flex-end' }}>
               {this.state.image1 ?
                 <TouchableOpacity style={styles.leftImageBottom}
-                  // onPress={() => { this._weixin1(this.state.textInput1) }}
+                  onPress={() => { this._weixin1(this.state.textInput1) }}
                 >
                   <Image style={{ height: 30, width: 35, resizeMode: 'cover' }} source={require('./image/wechat.png')}></Image>
                 </TouchableOpacity>
@@ -1353,7 +1353,7 @@ class Journl extends Component {
             <View style={{ width: width - 80, height: 30, alignItems: 'flex-end' }}>
               {this.state.image1 ?
                 <TouchableOpacity style={styles.leftImageBottom}
-                  // onPress={() => { this._weixin1(this.state.textInput2) }}
+                  onPress={() => { this._weixin1(this.state.textInput2) }}
                 >
                   <Image style={{ height: 30, width: 35, resizeMode: 'cover' }} source={require('./image/wechat.png')}></Image>
                 </TouchableOpacity>
@@ -1393,7 +1393,7 @@ class Journl extends Component {
             <View style={{ width: width - 80, height: 30, alignItems: 'flex-end' }}>
               {this.state.image1 ?
                 <TouchableOpacity style={styles.leftImageBottom}
-                  // onPress={() => { this._weixin1(this.state.textInput3) }}
+                  onPress={() => { this._weixin1(this.state.textInput3) }}
                 >
                   <Image style={{ height: 30, width: 35, resizeMode: 'cover' }} source={require('./image/wechat.png')}></Image>
                 </TouchableOpacity>
