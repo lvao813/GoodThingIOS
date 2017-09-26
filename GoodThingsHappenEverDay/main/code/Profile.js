@@ -17,6 +17,7 @@ import { Profile1,Level,Exp1,Exp2,TLevel,Recommended,Streak,LongStreak,Days,Thin
 import { toastLong} from './common/ToastUtils';
 import ImagePicker from 'react-native-image-picker';
 import { Header,Badeg1,Badeg2,Badeg3,Badeg4 } from './common/constants';
+import {toDipsHeight,toDipsWidth} from './common/constants'
 
  class Profile extends Component {
   constructor(props) {
@@ -265,7 +266,7 @@ import { Header,Badeg1,Badeg2,Badeg3,Badeg4 } from './common/constants';
                 <TouchableOpacity style={styles.LifeView}
                     onPress={()=>{this._showImagePicker()}}
                   >
-                      <Image source={{uri:this.state.img}} style={{height:80,width:80,borderRadius:40, resizeMode:'cover',marginTop:10}}></Image>
+                      <Image source={{uri:this.state.img}} style={{height:60,width:60,borderRadius:30, resizeMode:'cover',marginTop:10}}></Image>
                   </TouchableOpacity>
                 <View style={styles.RightView}>
                       <View style={styles.RightInpView}>
@@ -472,6 +473,7 @@ const styles = StyleSheet.create({
   },
   TopleftView:{
     flex:1,
+    // marginBottom:20,
     justifyContent:'center',
     alignItems:'center',
   },

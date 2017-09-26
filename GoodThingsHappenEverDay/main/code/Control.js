@@ -21,7 +21,7 @@ import { getItem, saveItem} from './common/AsyncStorage';
       var promise = saveItem("texinput2", '0', () => { }).then((result) => {
         var promise = saveItem("Calender", '0', () => { }).then((result) => {
           var promise = saveItem("leftday", '86400000', () => { }).then((result) => {
-            var promise = getItem("name1").then((result) => {
+            var promise = getItem("name2").then((result) => {
                 
                     this.goTo(result);
                     

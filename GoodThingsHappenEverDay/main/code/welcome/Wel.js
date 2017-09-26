@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   ScrollView,
   TextInput,
+  KeyboardAvoidingView,
 } from 'react-native';
 import { getItem, saveItem} from '../common/AsyncStorage'
 import { toastLong} from '../common/ToastUtils'
@@ -129,7 +130,7 @@ import { StackNavigator } from 'react-navigation';
     _renderSwiper(){
         return (
             <Swiper
-                // style={styles.swiperStyle}
+                style={{backgroundColor:'#F5FCFF'}}
                 height={200}
                 horizontal={true}
                 autoplay={true}
@@ -183,7 +184,7 @@ import { StackNavigator } from 'react-navigation';
                             <Text style={styles.instructions}>
                             {WELT33}
                             </Text>
-                            
+                            <KeyboardAvoidingView behavior="padding">
                             <TextInput
                                 underlineColorAndroid="transparent"
                                 autoCapitalize='words'
@@ -193,14 +194,14 @@ import { StackNavigator } from 'react-navigation';
                                 onChangeText={(Text) => {this.setState({name:Text})}}
                                 style={styles.TextInputSt}
                             ></TextInput>
-                        
+                            </KeyboardAvoidingView>
                     </View>
             </Swiper>
         )
     }
   render() {
     return (
-        <View style={{flex: 1}}>
+        <View style={{flex: 1,backgroundColor:'#F5FCFF'}}>
         {this._renderSwiper()}
         
       </View>

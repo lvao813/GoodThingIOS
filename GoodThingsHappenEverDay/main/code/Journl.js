@@ -1351,7 +1351,7 @@ class Journl extends Component {
               }
             </View>
             <View style={{ width: width - 80, height: 30, alignItems: 'flex-end' }}>
-              {this.state.image1 ?
+              {this.state.image2 ?
                 <TouchableOpacity style={styles.leftImageBottom}
                   onPress={() => { this._weixin1(this.state.textInput2) }}
                 >
@@ -1391,7 +1391,7 @@ class Journl extends Component {
               }
             </View>
             <View style={{ width: width - 80, height: 30, alignItems: 'flex-end' }}>
-              {this.state.image1 ?
+              {this.state.image3 ?
                 <TouchableOpacity style={styles.leftImageBottom}
                   onPress={() => { this._weixin1(this.state.textInput3) }}
                 >
