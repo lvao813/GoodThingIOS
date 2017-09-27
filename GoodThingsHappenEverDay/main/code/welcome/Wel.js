@@ -14,6 +14,7 @@ import { toastLong} from '../common/ToastUtils'
 import { NavigationActions } from 'react-navigation';
 import Swiper from 'react-native-swiper';
 import {NameT,WELT11,WELT12,WELT13,WELT21,WELT22,WELT23,WELT24,WELT31,WELT32,WELT33,WELINP} from '../common/constants_titel';
+import { toDipsWidth, toDipsHeight} from '../common/PixelRatioUtils'
 var Dimensions = require('Dimensions');
 var width = Dimensions.get('window').width;
 var height = Dimensions.get('window').height;
@@ -130,7 +131,7 @@ import { StackNavigator } from 'react-navigation';
     _renderSwiper(){
         return (
             <Swiper
-                style={{backgroundColor:'#F5FCFF'}}
+                style={{backgroundColor:'rgba(0,0,0,0)',}}
                 height={200}
                 horizontal={true}
                 autoplay={true}
@@ -140,8 +141,8 @@ import { StackNavigator } from 'react-navigation';
                 dotStyle={{backgroundColor:'#a5e4ff', width: 6, height: 6}}
                 activeDotStyle={{backgroundColor:'#03b4ff', width: 6, height: 6}}>
                         <View style={styles.container}>
-                            <View style={{height:40}}></View>
-                            <Image style={{height:200,width:200,marginBottom:10}}  source={require('../image/BigSmile.png')}></Image>
+                            <View style={{height:toDipsHeight(80)}}></View>
+                            <Image style={{height:toDipsHeight(300),width:toDipsWidth(300),marginBottom:10}}  source={require('../image/BigSmile.png')}></Image>
                             <Text style={styles.welcome} >
                             {WELT11}
                             </Text>
@@ -155,8 +156,8 @@ import { StackNavigator } from 'react-navigation';
                         
                     </View>
                     <View style={styles.container}>
-                            <View style={{height:40}}></View>
-                            <Image style={{height:200,width:200,marginBottom:10}} source={require('../image/brush.png')}></Image>
+                            <View style={{height:toDipsHeight(80)}}></View>
+                            <Image style={{height:toDipsHeight(300),width:toDipsWidth(300),marginBottom:10}} source={require('../image/brush.png')}></Image>
                             <Text style={styles.welcome} >
                             {WELT21}
                             </Text>
@@ -172,9 +173,11 @@ import { StackNavigator } from 'react-navigation';
                            
                         
                     </View>
+                    
                     <View style={styles.container}>
-                            <View style={{height:40}}></View>
-                            <Image style={{height:200,width:200,marginBottom:10}} source={require('../image/medal.png')}></Image>
+                   
+                            <View style={{height:toDipsHeight(80)}}></View>
+                            <Image style={{height:toDipsHeight(300),width:toDipsWidth(300),marginBottom:10}} source={require('../image/medal.png')}></Image>
                             <Text style={styles.welcome} >
                             {WELT31}
                             </Text>
@@ -184,7 +187,10 @@ import { StackNavigator } from 'react-navigation';
                             <Text style={styles.instructions}>
                             {WELT33}
                             </Text>
-                            <KeyboardAvoidingView behavior="padding">
+                            
+                            <KeyboardAvoidingView behavior="padding" style={styles.instructionse}>
+                            
+                         
                             <TextInput
                                 underlineColorAndroid="transparent"
                                 autoCapitalize='words'
@@ -194,8 +200,12 @@ import { StackNavigator } from 'react-navigation';
                                 onChangeText={(Text) => {this.setState({name:Text})}}
                                 style={styles.TextInputSt}
                             ></TextInput>
+                            
                             </KeyboardAvoidingView>
+                            <View style={{flex:2}}></View>
+                            
                     </View>
+                    
             </Swiper>
         )
     }
@@ -247,6 +257,14 @@ const styles = StyleSheet.create({
     color: '#b3b3b3',
     marginBottom: 5,
   },
+  instructionse: {
+    flex: 1,
+    backgroundColor:'#F5FCFF',
+    justifyContent: 'center',
+    paddingHorizontal: 20,
+    paddingTop:20,
+    
+  },
   TextInputSt:{
     // marginLeft:40,
     // marginRight:40,
@@ -255,7 +273,8 @@ const styles = StyleSheet.create({
     borderColor:'#31bdfe',
     borderWidth:2,
     borderRadius:10,
-    color:'#444444'
+    color:'#444444',
+   
 
   },
   swiperItem:{
