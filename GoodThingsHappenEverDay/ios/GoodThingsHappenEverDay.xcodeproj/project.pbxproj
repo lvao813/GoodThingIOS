@@ -38,6 +38,7 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		84BE9138071B454F87B11678 /* libthird-party.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA6F15E15B9433FAA4CBED6 /* libthird-party.a */; };
 		88A1D0A5AF994040937F0138 /* libdouble-conversion.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF9BD3F78844DE392E7F0EA /* libdouble-conversion.a */; };
+		AE2E44741F7BBA7600E54128 /* libRCTPushNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2E445B1F7BB8B800E54128 /* libRCTPushNotification.a */; };
 		AEEF459C1F78D6B8004BC498 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEF459B1F78D6B8004BC498 /* libc++.tbd */; };
 		AEEF459E1F78D6CA004BC498 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEF459D1F78D6CA004BC498 /* libz.tbd */; };
 		AEEF45A01F78D6F4004BC498 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEF459F1F78D6F4004BC498 /* libsqlite3.0.tbd */; };
@@ -267,6 +268,20 @@
 			remoteGlobalIDString = 014A3B5C1C6CF33500B6D375;
 			remoteInfo = RNImagePicker;
 		};
+		AE2E445A1F7BB8B800E54128 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE2E444B1F7BB8B800E54128 /* RCTPushNotification.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RCTPushNotification;
+		};
+		AE2E445C1F7BB8B800E54128 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE2E444B1F7BB8B800E54128 /* RCTPushNotification.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D05745F1DE6004600184BB4;
+			remoteInfo = "RCTPushNotification-tvOS";
+		};
 		AEEF45961F78D5BB004BC498 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A7D24005C4EF47E09791A4A1 /* RCTWeChat.xcodeproj */;
@@ -314,6 +329,8 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		9F413640B643475FBAAFD4B1 /* libyoga.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libyoga.a; sourceTree = "<group>"; };
 		A7D24005C4EF47E09791A4A1 /* RCTWeChat.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTWeChat.xcodeproj; path = "../node_modules/react-native-wechat/ios/RCTWeChat.xcodeproj"; sourceTree = "<group>"; };
+		AE2E444B1F7BB8B800E54128 /* RCTPushNotification.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTPushNotification.xcodeproj; path = "../node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj"; sourceTree = "<group>"; };
+		AE68DB4A1F7D05DE003B8276 /* GoodThingsHappenEverDay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = GoodThingsHappenEverDay.entitlements; path = GoodThingsHappenEverDay/GoodThingsHappenEverDay.entitlements; sourceTree = "<group>"; };
 		AEEF459B1F78D6B8004BC498 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		AEEF459D1F78D6CA004BC498 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		AEEF459F1F78D6F4004BC498 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
@@ -328,6 +345,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE2E44741F7BBA7600E54128 /* libRCTPushNotification.a in Frameworks */,
 				AEEF45A51F78D794004BC498 /* SystemConfiguration.framework in Frameworks */,
 				AEEF45A31F78D77B004BC498 /* CoreTelephony.framework in Frameworks */,
 				AEEF45A11F78D749004BC498 /* libRCTWeChat.a in Frameworks */,
@@ -460,6 +478,7 @@
 		13B07FAE1A68108700A75B9A /* GoodThingsHappenEverDay */ = {
 			isa = PBXGroup;
 			children = (
+				AE68DB4A1F7D05DE003B8276 /* GoodThingsHappenEverDay.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -511,6 +530,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				AE2E444B1F7BB8B800E54128 /* RCTPushNotification.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -579,6 +599,15 @@
 			isa = PBXGroup;
 			children = (
 				AE19E03E1F73CF2B00E0AD95 /* libRNImagePicker.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE2E444C1F7BB8B800E54128 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE2E445B1F7BB8B800E54128 /* libRCTPushNotification.a */,
+				AE2E445D1F7BB8B800E54128 /* libRCTPushNotification-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -672,6 +701,17 @@
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 9S8C879EWE;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.GameCenter = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -719,6 +759,10 @@
 				{
 					ProductGroup = 00C302D41ABCB9D200DB3ED1 /* Products */;
 					ProjectRef = 00C302D31ABCB9D200DB3ED1 /* RCTNetwork.xcodeproj */;
+				},
+				{
+					ProductGroup = AE2E444C1F7BB8B800E54128 /* Products */;
+					ProjectRef = AE2E444B1F7BB8B800E54128 /* RCTPushNotification.xcodeproj */;
 				},
 				{
 					ProductGroup = 139105B71AF99BAD00B5F7CC /* Products */;
@@ -969,6 +1013,20 @@
 			remoteRef = AE19E03D1F73CF2B00E0AD95 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		AE2E445B1F7BB8B800E54128 /* libRCTPushNotification.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTPushNotification.a;
+			remoteRef = AE2E445A1F7BB8B800E54128 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE2E445D1F7BB8B800E54128 /* libRCTPushNotification-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTPushNotification-tvOS.a";
+			remoteRef = AE2E445C1F7BB8B800E54128 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		AEEF45971F78D5BB004BC498 /* libRCTWeChat.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1097,6 +1155,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GoodThingsHappenEverDay/GoodThingsHappenEverDay.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 9S8C879EWE;
@@ -1132,6 +1191,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GoodThingsHappenEverDay/GoodThingsHappenEverDay.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9S8C879EWE;
 				HEADER_SEARCH_PATHS = (

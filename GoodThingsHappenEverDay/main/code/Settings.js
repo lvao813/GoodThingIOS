@@ -7,9 +7,11 @@ import {
   Image,
   Linking,
   Alert,
+  AlertIOS,
   NativeModules,
   Modal,
   TouchableOpacity,
+  PushNotificationIOS,
 
 } from 'react-native';
 import {  List } from 'antd-mobile';
@@ -47,13 +49,14 @@ const Brief = Item.Brief;
         level:1,
         modalVisible2:false,
         modalVisible1:false,
-        
+        permissions: null,
        
         };
         WeChat.registerApp('wx6000a418f168ac83');
         
       }
       componentWillMount() {
+        PushNotificationIOS.addEventListener('localNotification', this._onLocalNotification);
         var promise = getItem("swith").then((result) => {
            if(result==null){
 
@@ -90,6 +93,25 @@ const Brief = Item.Brief;
         
 
       }
+      componentWillUnmount() {
+        
+        
+        // Remove listener for local notifications
+        PushNotificationIOS.removeEventListener('localNotification', this._onLocalNotification);
+      }
+      _onLocalNotification(notification){
+        AlertIOS.alert(
+          'Local Notification Received',
+          'Alert message: ' + notification.getMessage(),
+          [{
+            text: 'Dismiss',
+            onPress: null,
+          }]
+        );
+        // console.log(notification)
+        // alert(JSON.stringify(notification))
+      }
+    
       _friends(){
         var promise = getItem("friends").then((result) => {
           // alert(parseInt(result))
@@ -136,7 +158,7 @@ const Brief = Item.Brief;
     _hideDateTimePicker = () => this.setState({ isDateTimePickerVisible: false });
   
     _handleDatePicked = (date) => {
-      console.log( date);
+      // console.log( date);
 
       // alert(date.toJSON())
       let nowtime = date.toJSON()
@@ -231,6 +253,15 @@ const Brief = Item.Brief;
         
       }
     });
+  }
+  _PushTest(){
+   var promise = PushNotificationIOS.presentLocalNotification({
+        details:{
+          "alertBody":"hello",
+          "alertAction":"view",
+         
+        }
+      })
   }
   _swith(value){
     // alert(value)
@@ -391,7 +422,7 @@ const Brief = Item.Brief;
       </List>
       <View style={{height:10}}></View>
       <List className="my-list4">
-      <Item  arrow="horizontal" multipleLine='true' onClick={() => {}}>{RateUs}</Item>
+      <Item  arrow="horizontal" multipleLine='true' onClick={() => {this._PushTest()}}>{RateUs}</Item>
       </List>
       <View style={{height:10}}></View>
       <List className="my-list3">

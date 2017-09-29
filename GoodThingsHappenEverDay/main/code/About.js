@@ -32,6 +32,8 @@ var height = Dimensions.get('window').height;
       alert(time)
       this._hideDateTimePicker();
     };
+    
+
 
   render() {
     return (
